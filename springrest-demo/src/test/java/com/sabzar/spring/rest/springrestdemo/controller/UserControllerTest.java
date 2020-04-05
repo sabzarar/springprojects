@@ -24,4 +24,14 @@ class UserControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk()).andExpect(content().string(containsString("Welcome to the DevOPP")));
     }
+
+    @Test
+    void greetingWithName() throws  Exception{
+        String name ="sabzar";
+        mockMvc.perform(get("/greeting/"+name))
+                .andDo(print())
+                .andExpect(status().isOk()).andExpect(content().string(containsString("Welcome to the DevOPP "+name)));
+    }
+
+
 }
