@@ -12,9 +12,20 @@ pipeline {
                 echo 'Building sample maven project'
             }
         }
+		stage('Integration Testing') {
+            steps {
+                echo 'Intehration Testing'
+				echo 'All test cases passes'
+            }
+        }
         stage('deploy') {
             steps {
-                echo 'Deploying the project'
+                echo 'Deploying the project to stage'
+            }
+        }
+		stage('deploy Prodection') {
+            steps {
+                echo 'Deploying the project to Prodection'
             }
         }
 
