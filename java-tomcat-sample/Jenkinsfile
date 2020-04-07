@@ -1,7 +1,6 @@
 pipeline {
     agent any
-	def buildInfo
-    stages {
+	stages {
         stage('Init') {
             steps {
                 echo 'Hi, This is Sabzar from Evry Tieto .. just like to test this execution'
