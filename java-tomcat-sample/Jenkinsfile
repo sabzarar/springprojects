@@ -3,16 +3,22 @@ pipeline {
 	stages {
         stage('Init') {
             steps {
-                echo 'Hi, This is Sabzar from Evry Tieto .. just like to test this execution'
+                echo 'Hi, This is Sabzar from Evry Tieto. Wellcome to Jenkins PipeLine'
                 echo 'Initializing the project'
-				bat 'echo  *** this is in bat***'
-				bat 'mvn clean package -f java-tomcat-sample/pom.xml'
-            }
+				
         }
         stage('build') {
             steps {
                 echo 'Building sample maven project'
+				bat 'mvn clean package -f java-tomcat-sample/pom.xml'
             }
+			 post {
+                success {
+                    echo "Now Archiving the Artifacts...."
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+			
         }
 		stage('Integration Testing') {
             steps {
