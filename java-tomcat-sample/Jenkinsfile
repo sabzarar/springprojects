@@ -28,13 +28,18 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                echo 'Deploying the project to stage'
+		        echo 'Deploying the project to stage'
 				build job: 'Deploy_Application_Staging_Env_From_Code_PipeLine'
             }
         }
 		stage('deploy Prodection') {
             steps {
+			    timeout(time:5, unit:'DAYS'){
+				input message: 'Aprove for Prodection Deployment'
+		
+				}
                 echo 'Deploying the project to Prodection'
+				echo 'call build job: here'
             }
         }
 
