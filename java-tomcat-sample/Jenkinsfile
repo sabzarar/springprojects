@@ -29,7 +29,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'Deploying the project to stage'
-				build job: 'Project Deploy_Application_Staging_Env_From_Code_PipeLine'
+				build job: 'Deploy_Application_Staging_Env_From_Code_PipeLine'
             }
         }
 		stage('deploy Prodection') {
