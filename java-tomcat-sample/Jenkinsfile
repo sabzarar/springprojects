@@ -1,11 +1,12 @@
 pipeline {
     agent any
+	def buildInfo
     stages {
         stage('Init') {
             steps {
                 echo 'Hi, This is Sabzar from Evry Tieto .. just like to test this execution'
                 echo 'Initializing the project'
-				sh 'mvn clean package -f java-tomcat-sample/pom.xml'
+				bat 'mvn clean package -f java-tomcat-sample/pom.xml'
             }
         }
         stage('build') {
