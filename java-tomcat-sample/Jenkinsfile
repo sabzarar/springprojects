@@ -5,8 +5,8 @@ pipeline {
             steps {
                 echo 'Hi, This is Sabzar from Evry Tieto. Wellcome to Jenkins PipeLine'
                 echo 'Initializing the project'
-				
-        }
+		    }
+		}	
         stage('build') {
             steps {
                 echo 'Building sample maven project'
